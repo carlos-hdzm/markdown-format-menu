@@ -1,0 +1,125 @@
+{
+  "name": "markdown-format-menu",
+  "displayName": "Markdown Format Menu",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdown-format-menu.italic",
+        "title": "Italic"
+      },
+      {
+        "command": "markdown-format-menu.bold",
+        "title": "Bold"
+      },
+      {
+        "command": "markdown-format-menu.boldItalic",
+        "title": "Bold Italic"
+      },
+      {
+        "command": "markdown-format-menu.strikethrough",
+        "title": "Strikethrough"
+      },
+      {
+        "command": "markdown-format-menu.code-inline",
+        "title": "Inline Code"
+      },
+      {
+        "command": "markdown-format-menu.code-block",
+        "title": "Code Block"
+      },
+      {
+        "command": "markdown-format-menu.link",
+        "title": "Link"
+      },
+      {
+        "command": "markdown-format-menu.image",
+        "title": "Image"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "markdown-format-menu.format",
+        "label": "Format Selection"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "group": "1_modification",
+          "submenu": "markdown-format-menu.format",
+          "when": "resourceLangId == markdown"
+        }
+      ],
+      "markdown-format-menu.format": [
+        {
+          "group": "1_text_formatting@1",
+          "command": "markdown-format-menu.italic",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "1_text_formatting@2",
+          "command": "markdown-format-menu.bold",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "1_text_formatting@3",
+          "command": "markdown-format-menu.boldItalic",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "1_text_formatting@4",
+          "command": "markdown-format-menu.strikethrough",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "2_code_formatting@1",
+          "command": "markdown-format-menu.code-inline",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "2_code_formatting@2",
+          "command": "markdown-format-menu.code-block",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "3_anchor_and_link@1",
+          "command": "markdown-format-menu.link",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "3_anchor_and_link@2",
+          "command": "markdown-format-menu.image",
+          "when": "resourceLangId == markdown"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.120.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.56.1",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
