@@ -3,6 +3,12 @@
   "displayName": "Markdown Format Menu",
   "description": "",
   "version": "0.0.1",
+  "type": "module",
+  "publisher": "carlos-hdzm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carlos-hdzm/markdown-format-menu"
+  },
   "engines": {
     "vscode": "^1.120.0"
   },
@@ -12,6 +18,25 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Markdown Format Menu",
+      "properties": {
+        "markdown-format-menu.unordered-list-bullet-string": {
+          "type": "string",
+          "default": "-",
+          "enum": [
+            "-",
+            "*"
+          ],
+          "enumItemLabels": [
+            "hyphen",
+            "asterisk"
+          ],
+          "description": "The string to use for unordered list bullet formatting."
+        }
+      }
+    },
     "commands": [
       {
         "command": "markdown-format-menu.italic",
@@ -22,7 +47,7 @@
         "title": "Bold"
       },
       {
-        "command": "markdown-format-menu.boldItalic",
+        "command": "markdown-format-menu.bold-italic",
         "title": "Bold Italic"
       },
       {
@@ -44,6 +69,42 @@
       {
         "command": "markdown-format-menu.image",
         "title": "Image"
+      },
+      {
+        "command": "markdown-format-menu.unordered-list",
+        "title": "Unordered List"
+      },
+      {
+        "command": "markdown-format-menu.ordered-list",
+        "title": "Ordered List"
+      },
+      {
+        "command": "markdown-format-menu.blockquote",
+        "title": "Blockquote"
+      },
+      {
+        "command": "markdown-format-menu.heading1",
+        "title": "Heading h1"
+      },
+      {
+        "command": "markdown-format-menu.heading2",
+        "title": "Heading h2"
+      },
+      {
+        "command": "markdown-format-menu.heading3",
+        "title": "Heading h3"
+      },
+      {
+        "command": "markdown-format-menu.heading4",
+        "title": "Heading h4"
+      },
+      {
+        "command": "markdown-format-menu.heading5",
+        "title": "Heading h5"
+      },
+      {
+        "command": "markdown-format-menu.heading6",
+        "title": "Heading h6"
       }
     ],
     "submenus": [
@@ -73,7 +134,7 @@
         },
         {
           "group": "1_text_formatting@3",
-          "command": "markdown-format-menu.boldItalic",
+          "command": "markdown-format-menu.bold-italic",
           "when": "resourceLangId == markdown"
         },
         {
@@ -100,6 +161,51 @@
           "group": "3_anchor_and_link@2",
           "command": "markdown-format-menu.image",
           "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "4_lists@1",
+          "command": "markdown-format-menu.unordered-list",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "4_lists@2",
+          "command": "markdown-format-menu.ordered-list",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "5_blockquotes@1",
+          "command": "markdown-format-menu.blockquote",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "6_headings@1",
+          "command": "markdown-format-menu.heading1",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "6_headings@2",
+          "command": "markdown-format-menu.heading2",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "6_headings@3",
+          "command": "markdown-format-menu.heading3",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "6_headings@4",
+          "command": "markdown-format-menu.heading4",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "6_headings@5",
+          "command": "markdown-format-menu.heading5",
+          "when": "resourceLangId == markdown"
+        },
+        {
+          "group": "6_headings@6",
+          "command": "markdown-format-menu.heading6",
+          "when": "resourceLangId == markdown"
         }
       ]
     }
@@ -113,13 +219,17 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.120.0",
+    "@types/chai": "^5.2.3",
+    "@types/chai-jest-snapshot": "^1.3.8",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
+    "@types/vscode": "^1.120.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "chai": "^6.2.2",
+    "chai-jest-snapshot": "^2.0.0",
     "eslint": "^9.39.3",
     "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "typescript-eslint": "^8.56.1"
   }
 }
