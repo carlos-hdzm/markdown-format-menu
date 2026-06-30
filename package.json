@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "type": "module",
   "publisher": "carlos-hdzm",
+  "icon": "assets/markdown-format-menu.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/carlos-hdzm/markdown-format-menu"
@@ -22,7 +23,7 @@
       "type": "object",
       "title": "Markdown Format Menu",
       "properties": {
-        "markdown-format-menu.unordered-list-bullet-string": {
+        "markdown-format-menu.unorderedListBulletString": {
           "type": "string",
           "default": "-",
           "enum": [

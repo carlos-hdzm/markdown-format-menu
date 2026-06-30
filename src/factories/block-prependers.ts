@@ -68,12 +68,7 @@ function blockPrependerFactory(prependText: string) {
   };
 }
 
-const unorderedListBullet =
-  vscode.workspace
-    .getConfiguration("markdown-format-menu")
-    .get<string>("unordered-list-bullet-string") || "-";
-
-const unorderedList = blockPrependerFactory(`${unorderedListBullet} `);
+const unorderedList = (unorderedListBullet: string) => blockPrependerFactory(`${unorderedListBullet} `);
 const orderedList = blockPrependerFactory("%d. ");
 const blockquote = blockPrependerFactory("> ");
 const heading1 = blockPrependerFactory("# ");

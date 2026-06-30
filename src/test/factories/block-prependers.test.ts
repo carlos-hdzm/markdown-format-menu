@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { after, before, beforeEach } from "mocha";
+import { after, afterEach, before, beforeEach } from "mocha";
 import * as chai from "chai";
 import chaiJestSnapshot from "chai-jest-snapshot";
 
@@ -57,6 +57,20 @@ suite("Block Prependers", () => {
     await vscode.commands.executeCommand("workbench.action.closeAllEditors");
   });
 
+  const scope = vscode.ConfigurationTarget.Global;
+
+  afterEach(async () => {
+    const defaultConfig: Record<string, string> = {
+      "unorderedListBulletString": "-",
+    };
+
+    for (let key in defaultConfig) {
+      await vscode.workspace
+        .getConfiguration("markdown-format-menu")
+        .update(key, defaultConfig[key], scope);
+    }
+  });
+
   const testCommand = (
     commandName: string,
     prependLength: number,
@@ -64,8 +78,6 @@ suite("Block Prependers", () => {
   ) =>
     async function () {
       if (config) {
-        const scope = vscode.ConfigurationTarget.Global;
-
         for (let key in config) {
           await vscode.workspace
             .getConfiguration("markdown-format-menu")
@@ -114,10 +126,16 @@ suite("Block Prependers", () => {
       ]);
     };
 
-  test("Unordered List - Default config (dash)", testCommand("unordered-list", 2));
-  test("Unordered List - Custom config (asterisk)", testCommand("unordered-list", 2, {
-    "unordered-list-bullet-string": "*"
-  }));
+  test(
+    "Unordered List - Default config (dash)",
+    testCommand("unordered-list", 2),
+  );
+  test(
+    "Unordered List - Custom config (asterisk)",
+    testCommand("unordered-list", 2, {
+      "unorderedListBulletString": "*",
+    }),
+  );
   test("Ordered List", testCommand("ordered-list", 3));
   test("Blockquote", testCommand("blockquote", 2));
   test("Heading h1", testCommand("heading1", 2));
