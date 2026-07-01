@@ -13,7 +13,7 @@ On Markdown (.md) files, it enables a context menu option available through a ri
 
 **Examples:**
 <div align="center">
-    
+
 ![Make selection bold](https://github.com/user-attachments/assets/87da46d4-af38-41ff-a8f6-d5f0ebf9d5e2)
 *Make selection bold*
 </div>
@@ -66,3 +66,4 @@ None as of 07/01/2026.
 - Source code: [https://github.com/carlos-hdzm/markdown-format-menu](https://github.com/carlos-hdzm/markdown-format-menu)
 - Report issues: [https://github.com/carlos-hdzm/markdown-format-menu/issues](https://github.com/carlos-hdzm/markdown-format-menu/issues)
 - CHANGELOG: [CHANGELOG.md](./CHANGELOG.md)
+- LICENSE: [LICENSE](./LICENSE)

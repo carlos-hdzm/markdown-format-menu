@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.3 - July 1, 2026
+
+### Modified
+
+- Fixed example animation rendering on the Marketplace page
+
 ## 1.0.2 - July 1, 2026
 
 ### Modified
@@ -10,7 +16,7 @@
 
 ### Added
 
-- MIT [License](LICENSE)
+- MIT [License](./LICENSE)
 - Keywords and categories for the Visual Studio Marketplace
 
 ## 1.0.0 - July 1, 2026 - Initial release
