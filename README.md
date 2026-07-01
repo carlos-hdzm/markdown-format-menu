@@ -59,7 +59,7 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-None as of 06/29/2026.
+None as of 07/01/2026.
 
 ## Links
 
