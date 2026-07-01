@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.0.1 - July 1, 2026
+
+### Added
+
+- MIT [License](LICENSE)
+- Keywords and categories for the Visual Studio Marketplace
+
 ## 1.0.0 - July 1, 2026 - Initial release
 
 ### Added
