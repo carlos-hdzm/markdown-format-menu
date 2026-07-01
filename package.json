@@ -1,8 +1,8 @@
 {
   "name": "markdown-format-menu",
   "displayName": "Markdown Format Menu",
-  "description": "",
-  "version": "0.0.1",
+  "description": "Format Markdown with a context menu.",
+  "version": "0.0.0",
   "type": "module",
   "publisher": "carlos-hdzm",
   "icon": "assets/markdown-format-menu.png",
